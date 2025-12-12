@@ -10,6 +10,7 @@ class CustomUser(AbstractUser):
         MANAGER = 'MANAGER', 'Manager'
 
     role = models.CharField(max_length=15, choices=Role.choices, default=Role.USER)
+    profile_picture = models.URLField(null=True, blank=True)
 
     @property
     def is_admin(self) -> bool:
